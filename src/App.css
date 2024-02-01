@@ -1,0 +1,59 @@
+.app{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
+input, option, select{
+  padding: 1rem;
+}
+
+.header{
+  border: 1px solid red;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.interaction{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search{
+  border: 1px solid red;
+}
+
+.filter{
+  border: 1px solid red;
+}
+
+.sort{
+  border: 1px solid red;
+}
+
+.footer{
+  border: 1px solid red;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid red;
+
+}
+
+.card{
+  border: 1px solid red;
+}
