@@ -3,12 +3,14 @@ import Search from './Search';
 import Filter from './Filter';
 import Sort from './Sort';
 
-const Interaction = () => {
+const Interaction = ({onFilter}) => {
   return (
     <div className='interaction'>
-      <Search/>
-      <Filter/>
-      <Sort/>
+      <Search onFilter={onFilter}/>
+      <div className='selection'>
+        <Filter />
+        <Sort/>
+      </div>
     </div>
   )
 }

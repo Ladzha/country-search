@@ -1,16 +1,16 @@
 import './App.css';
-import Header from './components/header/Header.jsx';
-import Main from './components/main/Main.jsx';
-import Footer from './components/footer/Footer.jsx';
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 
 
 function App() {
 
   return (
     <div className='app'>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <Header/>
+      <Main/>
+      <Footer/>
     </div>
   )
 }
