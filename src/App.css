@@ -33,8 +33,10 @@ body{
   gap: 5rem;
 }
 
-input, select{
+input, select, option{
   border: none;
+  color: inherit;
+  font-size: 1rem;
   padding: 1rem;
   box-shadow: 2px 2px 3px rgba(227, 223, 213, 0.9);
   background-color: var(--white);
