@@ -134,10 +134,6 @@ input, select{
   width: 100%;
 }
 
-.info{
-  /* margin-top: 1rem; */
-}
-
 .name{
   font-size: var(--font-name) ;
   padding-bottom: 0.5rem;
@@ -203,7 +199,6 @@ option:hover{
   .input-search{
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 550px) {
@@ -242,10 +237,12 @@ option:hover{
   }
 
   .sort select{
+    padding: 1rem;
     width: 100%
   }
 
   .filter select{
+    padding: 1rem;
     width: 100%
   }
 
