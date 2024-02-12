@@ -7,6 +7,10 @@
   --font-name: 1.25rem;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -29,20 +33,11 @@ body{
   gap: 5rem;
 }
 
-input, option, select{
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: var(--white);
-}
-
-input, option, select{
-  padding: 1rem;
-}
-
 input, select{
-  height: 100%;
+  border: none;
+  padding: 1rem;
   box-shadow: 2px 2px 3px rgba(227, 223, 213, 0.9);
+  background-color: var(--white);
 }
 
 .bold{
@@ -50,6 +45,7 @@ input, select{
 }
 
 .header{
+  position: fixed;
   width: 100%; 
   display: flex;
   justify-content:space-between;
@@ -66,6 +62,7 @@ input, select{
 .main{ 
   max-width: 90vw;
   width: 80vw;
+  padding-top: 8rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -139,11 +136,6 @@ input, select{
   padding-bottom: 0.5rem;
 }
 
-option:hover{
-  padding: 1rem 0;
-  background-color: rgb(223, 223, 225);
-}
-
 .no-result{
   text-align: center;
 }
@@ -196,6 +188,14 @@ option:hover{
     width: 49%;
   }
 
+  .sort select{
+    width: 100%
+  }
+
+  .filter select{
+    width: 100%
+  }
+
   .input-search{
     width: 100%;
   }
@@ -229,27 +229,25 @@ option:hover{
   }
 
   .filter, .sort{
-    display: flex;
-    justify-content: stretch;
-    align-items: stretch;
-    align-content: stretch;
     width: 100%;
   }
 
+  .input-search{
+    padding: 1rem;
+    height: 3.5rem;
+    width: 100%
+  }
   .sort select{
     padding: 1rem;
+    height: 3.5rem;
     width: 100%
   }
 
   .filter select{
     padding: 1rem;
+    height: 3.5rem;
     width: 100%
   }
-
-  .filter select option{
-    font-size: 0.9rem;
-  }
-
 }
 
 
