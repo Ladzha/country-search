@@ -2,7 +2,6 @@ import { useState } from 'react'
 import List from './List';
 import Interaction from './Interaction';
 
-
 const Main = () => {
 
   const [searchValue, setSearchValue]=useState('')
