@@ -4,12 +4,10 @@ const Search = ({onSearchChange}) => {
 
   const {value, onChange} =useInput()
 
-  const handleChange=(event: React.KeyboardEvent<HTMLInputElement>)=>{
+  const handleChange=(event)=>{
     onChange(event)
     onSearchChange(event.target.value)
   }
-
-  
 
   return (
     <>

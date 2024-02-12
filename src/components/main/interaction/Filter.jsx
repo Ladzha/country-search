@@ -3,7 +3,7 @@ import {useState} from 'react'
 const Filter = ({onFilterChange}) => {
   const [region, setRegion] = useState('')
 
-  const handleClick = (event: React.KeyboardEvent<HTMLSelectElement>)=>{
+  const handleClick = (event)=>{
     setRegion(event.target.value); 
     onFilterChange(event.target.value)  
   }

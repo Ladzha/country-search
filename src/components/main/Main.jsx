@@ -8,15 +8,15 @@ const Main = () => {
   const [filterValue, setFilterValue]=useState('')
   const [sortValue, setSortValue]=useState('')
   
-  const onSearchChange =(value: string)=>{
+  const onSearchChange =(value)=>{
     setSearchValue(value)
   }
 
-  const onFilterChange=(value: string)=>{
+  const onFilterChange=(value)=>{
     setFilterValue(value);
   }
 
-  const onSortChange =(value: string)=>{
+  const onSortChange =(value)=>{
     setSortValue(value);
   }
 

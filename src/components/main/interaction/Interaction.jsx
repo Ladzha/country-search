@@ -4,15 +4,15 @@ import Sort from './Sort';
 
 const Interaction = ({onSearchChange, onFilterChange, onSortChange}) => {
 
-  const handleSearch=(value: string)=>{
+  const handleSearch=(value)=>{
     onSearchChange(value);
   }
 
-  const handleFilter=(value: string)=>{
+  const handleFilter=(value)=>{
     onFilterChange(value);
   }
 
-  const handleSort=(value: string)=>{
+  const handleSort=(value)=>{
     onSortChange(value);
   }
 

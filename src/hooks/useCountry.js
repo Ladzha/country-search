@@ -1,10 +1,9 @@
 import { useState, useEffect, useCallback} from 'react';
-import { ICountry } from '../models';
 import axios from 'axios';
 
 export default function useCountry() {
 
-  const [countries, setCountries] = useState<ICountry[]>([])
+  const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -12,13 +11,12 @@ export default function useCountry() {
       try {
         setError('')
         setLoading(true)
-        const response = await axios.get<ICountry[]>
-        ('https://restcountries.com/v3.1/all?fields=name,flags,population,area,region,capital')
+        const response = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population,area,region,capital')
         setCountries(response.data)
         setLoading(false)
 
-      } catch (err: unknown) {
-        const error = err as AxiosError
+      } catch (err) {
+        const error = err
         setLoading(false)
         setError(error.message)    
       }

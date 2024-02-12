@@ -1,7 +1,4 @@
-import { ICountry } from '../../models';
-
-const Card = ({ flag, name, region, population, area, capital } : ICountry ) => {
-  
+const Card = ({ flag, name, region, population, area, capital }) => {
   return (
     <div className='card'>
       <div className='flag'>      

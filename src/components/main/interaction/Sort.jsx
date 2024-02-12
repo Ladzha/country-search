@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import  {useState} from 'react'
 
 const Sort = ({onSortChange}) => {
   const [sortValue, setSortValue] = useState('')
 
-  const handleClick = (event: React.KeyboardEvent<HTMLSelectElement>)=>{
+  const handleClick = (event)=>{
     setSortValue(event.target.value)
     onSortChange(event.target.value)
   }
