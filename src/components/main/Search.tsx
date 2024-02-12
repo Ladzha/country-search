@@ -1,20 +1,24 @@
-import useInput from '../../assets/hooks/useInput'
+import useInput from '../../hooks/useInput'
 
+const Search = ({onSearchChange}) => {
 
+  const {value, onChange} =useInput()
 
-const Search = ({onFilter}) => {
+  const handleChange=(event)=>{
+    onChange(event)
+    onSearchChange(event.target.value)
+  }
 
-  const input =useInput()
-
-  onFilter(input.value)
-
-  console.log(input.value);
+  
 
   return (
     <>
       <input type="text" 
       placeholder={"Search for a country..."} 
-      {...input}/>
+      className='input-search'
+      value={value}
+      onChange={handleChange}
+      />
     </>
   )
 }

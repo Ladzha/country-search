@@ -1,15 +1,27 @@
-import React from 'react'
 import Search from './Search';
 import Filter from './Filter';
 import Sort from './Sort';
 
-const Interaction = ({onFilter}) => {
+const Interaction = ({onSearchChange, onFilterChange, onSortChange}) => {
+
+  const handleSearch=(value: string)=>{
+    onSearchChange(value);
+  }
+
+  const handleFilter=(value: string)=>{
+    onFilterChange(value);
+  }
+
+  const handleSort=(value: string)=>{
+    onSortChange(value);
+  }
+
   return (
     <div className='interaction'>
-      <Search onFilter={onFilter}/>
+        <Search onSearchChange={handleSearch}/>
       <div className='selection'>
-        <Filter />
-        <Sort/>
+        <Filter onFilterChange={handleFilter}/>
+        <Sort onSortChange={handleSort}/>
       </div>
     </div>
   )

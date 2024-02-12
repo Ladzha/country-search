@@ -12,8 +12,8 @@ export default function useCountry() {
       try {
         setError('')
         setLoading(true)
-        const response = await axios.get<ICountry[]>('https://restcountries.com/v3.1/all?fields=name,flags,population,area,region,capital')
-        console.log(response.data);     
+        const response = await axios.get<ICountry[]>
+        ('https://restcountries.com/v3.1/all?fields=name,flags,population,area,region,capital')
         setCountries(response.data)
         setLoading(false)
 
@@ -29,5 +29,4 @@ export default function useCountry() {
   }, [fetchData])
 
   return { countries, loading, error }
-
 }

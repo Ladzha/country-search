@@ -1,13 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Sort = () => {
+const Sort = ({onSortChange}) => {
+  const [sortValue, setSortValue] = useState('')
+
+  const handleClick = (event: React.KeyboardEvent<HTMLSelectElement>)=>{
+    setSortValue(event.target.value)
+    onSortChange(event.target.value)
+  }
   return (
-    <select name="sort" id="">
-      <option value="">Filter by...</option>
-      <option value="alphabetical">Alphabetical</option>
-      <option value="size">Size</option>
-      <option value="population">Population</option>
-    </select>
+    <div className='sort'>
+      <select name="sort" id='sort' value={sortValue} onChange={handleClick}>
+        <option value="">Sort by...</option>
+        <option value="alphabetical">Alphabetical</option>
+        <option value="size">Size</option>
+        <option value="population">Population</option>
+      </select>
+    </div>
+
   )
 }
 

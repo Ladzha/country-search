@@ -1,26 +1,46 @@
 import Card from './Card';
-import useInput from '../../assets/hooks/useInput'
-import useCountry from '../../assets/hooks/useCountry'
+import useCountry from '../../hooks/useCountry'
+import Error from './Error';
+import Loader from './Loader';
 
+const List = ({searchValue, filterValue, sortValue}) => {
 
-const List = () => {
+  const {countries, loading, error}=useCountry()
+  let filteredCountries = countries;
 
-  const input =useInput()
-  const {countries, loading, error} =useCountry()
+  if(searchValue){
+    filteredCountries=filteredCountries.filter((country)=>
+    country.name.common.toLowerCase().startsWith(searchValue.toLowerCase()))
+  }
 
-  
+  if(filterValue){
+    filteredCountries=filteredCountries.filter((country)=>(
+    country.region.toLowerCase()===filterValue.toLowerCase()))
+  }
+  if(sortValue){
+    filteredCountries.sort((a, b)=>{
+      if(sortValue==='alphabetical'){
+        return a.name.common.localeCompare(b.name.common)
+      }
+      else if(sortValue==='population'){
+        return b.population - a.population
+      }
+      else if(sortValue==='size'){
+        return b.population - a.population
+      }
+    })
+  }
+
   return (
     <section className='list-container'>
-      <input type="text" 
-      className='search-input'
-      placeholder='Search for a country...' 
-      {...input}/>
-      {error && <h3 style={{'color': 'red'}}>{error}</h3>}  
-      {loading && <h3>Loading...</h3>} 
+
+      {error && <Error error={error}/>}  
+      {loading && <Loader/>} 
+      {filteredCountries.length <= 0 && !loading && !error ?
+      <h2 className='no-result'>There are no results for your search</h2> : null}
+
       <div className='list'>
-        {!loading && countries
-        .filter((country)=>
-          country.name.common.toLowerCase().startsWith(input.value.toLowerCase()))
+        {!loading && filteredCountries
         .map((country) =>(
           <Card 
           key={country.flags.svg}

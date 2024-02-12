@@ -1,10 +1,12 @@
-import React from 'react'
 import { ICountry } from '../models';
 
 const Card = ({ flag, name, region, population, area, capital } : ICountry ) => {
- 
+  
+  const handleClick=()=>{
+
+  }
   return (
-    <div className='card'>
+    <div className='card' onClick={handleClick}>
       <div className='flag'>      
         <img src={flag} title={`Flag of ${name}`} alt= {`Flag of ${name}`} />
       </div>
