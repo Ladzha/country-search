@@ -1,10 +1,10 @@
-import useInput from '../../hooks/useInput'
+import useInput from '../../../hooks/useInput'
 
 const Search = ({onSearchChange}) => {
 
   const {value, onChange} =useInput()
 
-  const handleChange=(event)=>{
+  const handleChange=(event: React.KeyboardEvent<HTMLInputElement>)=>{
     onChange(event)
     onSearchChange(event.target.value)
   }

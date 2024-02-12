@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import List from './List';
-import Interaction from './Interaction';
+import List from './countries/List';
+import Interaction from './interaction/Interaction';
 
 const Main = () => {
 
   const [searchValue, setSearchValue]=useState('')
   const [filterValue, setFilterValue]=useState('')
   const [sortValue, setSortValue]=useState('')
-
-  console.log('main');
   
   const onSearchChange =(value: string)=>{
     setSearchValue(value)

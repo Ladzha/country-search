@@ -1,7 +1,7 @@
 import Card from './Card';
-import useCountry from '../../hooks/useCountry'
-import Error from './Error';
-import Loader from './Loader';
+import useCountry from '../../../hooks/useCountry'
+import Error from '../../error/Error';
+import Loader from '../../loader/Loader';
 
 const List = ({searchValue, filterValue, sortValue}) => {
 
